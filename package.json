@@ -1,0 +1,26 @@
+{
+  "name": "test",
+  "module": "index.ts",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "bun run  src/index.ts",
+    "build": "tsc",
+    "serve": "bun run dist/index.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.4",
+    "ts-node": "^10.9.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "joi": "^17.13.3",
+    "mongoose": "^8.6.1",
+    "nodemon": "^3.1.4"
+  }
+}
