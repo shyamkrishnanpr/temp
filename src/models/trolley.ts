@@ -2,11 +2,11 @@ import { Schema, model } from "mongoose";
 import Joi from "joi";
 
 export const TrolleyValidation = Joi.object({
-    name:Joi.string().min(3).max(50).trim().required(),
-    width:Joi.number().required(),
-    height:Joi.number().required(),
-    length:Joi.number().required(),
-    payload:Joi.number().required(),
+    name:Joi.string().min(3).max(50).trim(),
+    width:Joi.number(),
+    height:Joi.number(),
+    length:Joi.number(),
+    payload:Joi.number(),
 }
     
 );
