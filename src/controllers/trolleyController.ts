@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { TrolleyValidation, Trolley } from "../models/trolley";
+import { TrolleyValidation, Trolley, ITrolley } from "../models/trolley";
 
 //create trolley
 
@@ -9,7 +9,8 @@ const createTrolley = async (req: Request, res: Response) => {
     if (error) {
       return res.status(400).send(error.details);
     }
-    const trolley = new Trolley(req.body);
+    const data: ITrolley = req.body;
+    const trolley = new Trolley(data);
     await trolley.save();
     res.status(201).json(trolley);
   } catch (error) {
@@ -67,7 +68,7 @@ const filterTrolley = async (req: Request, res: Response) => {
   } = req.query;
 
   const filter: any = {};
-  if (name) filter.name = name;
+  if (name) filter.name = { $regex: name, $options: "i" };
   if (minWidth) filter.width = { $gte: Number(minWidth) };
   if (maxWidth) filter.width = { ...filter.width, $lte: Number(maxWidth) };
   if (minHeight) filter.height = { $gte: Number(minHeight) };

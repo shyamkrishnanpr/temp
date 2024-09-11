@@ -4,7 +4,7 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "start": "bun run  src/index.ts",
+    "start": "nodemon --exec bun run src/index.ts",
     "build": "tsc",
     "serve": "bun run dist/index.js"
   },
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "express": "^4.19.2",
+    "helmet": "^7.1.0",
     "joi": "^17.13.3",
     "mongoose": "^8.6.1",
     "nodemon": "^3.1.4"

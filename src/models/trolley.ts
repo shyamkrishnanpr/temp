@@ -11,7 +11,7 @@ export const TrolleyValidation = Joi.object({
     
 );
 
-interface ITrolley {
+export interface ITrolley {
   name: string;
   width: number;
   height: number;
